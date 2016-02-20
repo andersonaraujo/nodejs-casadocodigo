@@ -1,0 +1,19 @@
+{
+  "name": "casadocodigo",
+  "version": "1.0.0",
+  "description": "Casa do Codigo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andersonaraujo/nodejs-casadocodigo.git"
+  },
+  "author": "Anderson Araujo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andersonaraujo/nodejs-casadocodigo/issues"
+  },
+  "homepage": "https://github.com/andersonaraujo/nodejs-casadocodigo#readme"
+}
