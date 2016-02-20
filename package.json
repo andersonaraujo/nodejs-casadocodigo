@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/andersonaraujo/nodejs-casadocodigo/issues"
   },
-  "homepage": "https://github.com/andersonaraujo/nodejs-casadocodigo#readme"
+  "homepage": "https://github.com/andersonaraujo/nodejs-casadocodigo#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
