@@ -1,22 +1,16 @@
+var dbConnection = require('../infra/dbConnection');
+
 module.exports = function (app) {
 
     app.get('/produtos', function (request, response) {
-        var mysql = require('mysql');
-        var connection = mysql.createConnection({
-            host: 'localhost',
-            user: 'casadocodigo',
-            password: 'casadocodigo',
-            database: 'casadocodigo_nodejs'
-        });
+        var connection = dbConnection();
 
         connection.query('select * from livros', function (err, result) {
-            response.send(result);
+            response.render('produtos/lista', {'lista': result});
+            //response.send(result);
         });
 
-
         connection.end();
-
-        //response.render('produtos/lista');
     });
 
     app.get('/', function (request, response) {
