@@ -1,18 +1,27 @@
 <html>
 <body>
 <h1>Cadastro de Produtos</h1>
+<div class="errors">
+    <% if(validationErrors){ %>
+    <ul>
+        <% for(var i = 0; i < validationErrors.length; i++){ %>
+        <li><%= validationErrors[i].param %> - <%= validationErrors[i].msg %></li>
+        <% } %>
+    </ul>
+    <% } %>
+</div>
 <form action="/produtos" method="post">
     <div>
         <label for="titulo">Titulo</label>
-        <input type="text" name="titulo" placeholder="Coloque o titulo"/>
+        <input type="text" name="titulo" placeholder="Coloque o titulo" value="<%=produto.titulo%>"/>
     </div>
     <div>
         <label for="preco">Precol</label>
-        <input type="text" name="preco" placeholder="Coloque o preco"/>
+        <input type="text" name="preco" placeholder="Coloque o preco" value="<%=produto.preco%>"/>
     </div>
     <div>
         <label for="descricao">Descricao</label>
-        <textarea cols="10" name="descricao" placeholder="Coloque a descricao"></textarea>
+        <textarea cols="10" name="descricao" placeholder="Coloque a descricao"><%=produto.descricao%></textarea>
     </div>
     <input type="submit" value="gravar"/>
 </form>
