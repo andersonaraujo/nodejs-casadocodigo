@@ -49,8 +49,4 @@ module.exports = function (app) {
         });
     });
 
-    app.get('/', function (request, response) {
-        response.send('<html><body><h1>Home da Casa do Codigo</h1></body></html>');
-    });
-
 };

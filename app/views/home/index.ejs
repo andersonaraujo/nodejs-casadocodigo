@@ -90,9 +90,9 @@
         <%for(i=0; i<3; i++) {%>
         <li class="col-left">
             <a href="linkDetalhe" class="block clearfix">
-                <img width="170" height="240" src="urlImagem" alt="<%=livros[i].titulo%>" title="<%=livros[i].titulo%>"/>
+                <img width="170" height="240" src="urlImagem" alt="<%=lista[i].titulo%>" title="<%=lista[i].titulo%>"/>
 
-                <h2 class="product-title"><%=livros[i].titulo%></h2>
+                <h2 class="product-title"><%=lista[i].titulo%></h2>
                 <small class="buy-button">Lan&#231;amento!</small>
             </a>
         </li>
@@ -104,15 +104,15 @@
         Aproveite!</h1>
 
     <ul class="clearfix book-collection">
-        <%for(i=0; i<livros.length; i++) {%>
+        <%for(i=0; i<lista.length; i++) {%>
             <li>
                 <a href="linkDetalhe" class="block clearfix">
-                    <h2 class="product-title"><%=livros[i].titulo%></h2>
+                    <h2 class="product-title"><%=lista[i].titulo%></h2>
                     <img width="143"
                          height="202"
                          src="linkImagemCapa"
-                         alt="<%=livros[i].titulo%>"
-                         title="<%=livros[i].titulo%>"/>
+                         alt="<%=lista[i].titulo%>"
+                         title="<%=lista[i].titulo%>"/>
 
                     <small class="buy-button">Compre</small>
                 </a>
