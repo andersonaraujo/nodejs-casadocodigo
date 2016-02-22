@@ -8,14 +8,15 @@
         <th>Descricao</th>
         <th>Preco</th>
     </tr>
-    <%for(var i =0; i< lista.length; i++) {%>
-        <tr>
-            <td><%=lista[i].id%></td>
-            <td><%=lista[i].titulo%></td>
-            <td><%=lista[i].descricao%></td>
-            <td><%=lista[i].preco%></td>
-        </tr>
-    <%}%>
+    <% for(var i = 0; i < lista.length; i++) { %>
+    <tr>
+        <td><%= lista[i].id %></td>
+        <td><%= lista[i].titulo %></td>
+        <td><%= lista[i].descricao %></td>
+        <td><%= lista[i].preco %></td>
+    </tr>
+    <% } %>
 </table>
+<div><a href="/produtos/form">Novo Produto</a></div>
 </body>
 </html>

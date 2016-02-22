@@ -13,7 +13,7 @@ GRANT ALL PRIVILEGES ON casadocodigo_nodejs.* To 'casadocodigo'@'localhost';
 --------------------------------
 -- CREATE TABLES
 --------------------------------
-create table livros (
+create table produtos (
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     titulo varchar(255),
     descricao text,
