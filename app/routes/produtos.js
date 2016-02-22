@@ -3,7 +3,15 @@ module.exports = function (app) {
     app.get('/produtos', function (request, response) {
         var produtosDAO = new app.infra.ProdutosDAO(app.infra.connectionFactory());
         produtosDAO.lista(function (err, result) {
-            response.render('produtos/lista', {'lista': result});
+            response.format({
+                html: function () {
+                    response.render('produtos/lista', {'lista': result});
+                },
+                json: function () {
+                    response.json(result);
+                }
+            });
+
         });
     });
 

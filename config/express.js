@@ -10,6 +10,7 @@ module.exports = function () {
 
     // Add body-parser middleware
     app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.json());
 
     load('routes', {cwd: 'app'})
         .then('infra')
