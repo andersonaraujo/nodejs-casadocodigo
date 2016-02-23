@@ -87,16 +87,17 @@
 <section id="index-section" class="container middle" ng-controller="HomeController">
 
     <ul id="home-highlight-collection">
-        <%for(i=0; i<3; i++) {%>
+        <% for(i = 0; i < 3; i++) { %>
         <li class="col-left">
             <a href="linkDetalhe" class="block clearfix">
-                <img width="170" height="240" src="http://nodebr.com/img/posts/livro-nodejs.png" alt="<%=lista[i].titulo%>" title="<%=lista[i].titulo%>"/>
+                <img width="170" height="240" src="http://nodebr.com/img/posts/livro-nodejs.png"
+                     alt="<%= lista[i].titulo %>" title="<%= lista[i].titulo %>"/>
 
-                <h2 class="product-title"><%=lista[i].titulo%></h2>
+                <h2 class="product-title"><%= lista[i].titulo %></h2>
                 <small class="buy-button">Lan&#231;amento!</small>
             </a>
         </li>
-        <%}%>
+        <% } %>
     </ul>
 
 
@@ -104,20 +105,20 @@
         Aproveite!</h1>
 
     <ul class="clearfix book-collection">
-        <%for(i=0; i<lista.length; i++) {%>
-            <li>
-                <a href="linkDetalhe" class="block clearfix">
-                    <h2 class="product-title"><%=lista[i].titulo%></h2>
-                    <img width="143"
-                         height="202"
-                         src="http://nodebr.com/img/posts/livro-nodejs.png"
-                         alt="<%=lista[i].titulo%>"
-                         title="<%=lista[i].titulo%>"/>
+        <% for(i = 0; i < lista.length; i++) { %>
+        <li>
+            <a href="linkDetalhe" class="block clearfix">
+                <h2 class="product-title"><%= lista[i].titulo %></h2>
+                <img width="143"
+                     height="202"
+                     src="http://nodebr.com/img/posts/livro-nodejs.png"
+                     alt="<%= lista[i].titulo %>"
+                     title="<%= lista[i].titulo %>"/>
 
-                    <small class="buy-button">Compre</small>
-                </a>
-            </li>
-        <%}%>
+                <small class="buy-button">Compre</small>
+            </a>
+        </li>
+        <% } %>
 
     </ul>
 
@@ -248,5 +249,12 @@
         </div>
     </div>
 </footer>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.on('novaPromocao', function (data) {
+        alert("Produto em promocao: " + data.produto.id + " : " + data.mensagem);
+    });
+</script>
 </body>
 </html>

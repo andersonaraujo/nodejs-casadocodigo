@@ -1,0 +1,30 @@
+<html>
+<body>
+<h1>Cadastro de Promoções</h1>
+<div class="errors">
+    <% if(validationErrors){ %>
+    <ul>
+        <% for(var i = 0; i < validationErrors.length; i++){ %>
+        <li><%= validationErrors[i].param %> - <%= validationErrors[i].msg %></li>
+        <% } %>
+    </ul>
+    <% } %>
+</div>
+<form action="/promocoes" method="post">
+    <div>
+        <label for="titulo">Mensagem</label>
+        <input type="text" name="mensagem"/>
+    </div>
+    <div>
+        <label>Produto</label>
+        <select name="produto[id]">
+            <option>Selecione o livro</option>
+            <% for(var i = 0; i < lista.length; i++){ %>
+            <option value="<%= lista[i].id %>"><%= lista[i].id %> - <%= lista[i].titulo %></option>
+            <% } %>
+        </select>
+    </div>
+    <input type="submit" value="gravar"/>
+</form>
+</body>
+</html>
