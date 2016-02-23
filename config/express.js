@@ -19,5 +19,13 @@ module.exports = function () {
         .then('infra')
         .into(app);
 
+    app.use(function (request, response, next) {
+        response.status(404).render('erros/404');
+    });
+
+    app.use(function (error, request, response, next) {
+        response.status(500).render('erros/500', {error: error});
+    });
+
     return app;
 };

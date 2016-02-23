@@ -1,6 +1,6 @@
 module.exports = function (app) {
 
-    app.get('/promocoes/form', function (request, response) {
+    app.get('/promocoes/form', function (request, response, next) {
         var produtosDAO = new app.infra.ProdutosDAO(app.infra.connectionFactory());
         produtosDAO.lista(function (err, result) {
             if (err) {
